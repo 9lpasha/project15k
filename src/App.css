@@ -1,38 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
 .App {
+  text-align: center;
+
+}
+
+input{
+  font-family: Montserrat;
+  font-size: 20px;
+}
+
+input:focus{
+  outline: none;
+  background: #eaeaea;
+}
+
+select{
+  border: none;
+  outline: none;
+}
+
+.tableWrap{
+  overflow-x: scroll;
+  margin: 20px;
+  height: calc(100vh - 97px);
+}
+
+.tableWrap::-webkit-scrollbar{
+
+}
+
+td input{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.miniModal input{
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Header{
+  height: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.HeaderComp{
+  background: #88aeec;
+}
+
+.HeaderCont{
+  background: #e0de96;
+}
+
+.HeaderObj{
+  background: #ee787c;
+}
+
+.HeaderYur{
+  background: #98da7d;
+}
+
+.addString{
+  margin-top: 30px;
+  font-family: Montserrat;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.addString:hover{
+  background: antiquewhite;
+}
+
+img{
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
+tr{
+  min-height: 28px;
+}
+
+tr>div{
+  width: 100%;
+  min-height: 28px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.modalInsertString{
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 5px solid black;
+  background: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modalInsertString input{
+  border: 1px solid black!important;
+}
+
+.modalInsertString input:hover{
+  background: #eaeaea;
+}
+
+.modalInsertString span{
+  margin-right: 10px;
+}
+
+.modalInsertString>div{
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.butInsert{
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0 20px;
+}
+
+.butInsert:hover{
+  background: antiquewhite;
+  cursor: pointer;
+}
+
+.backModal{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: darkgrey;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.miniModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 5px solid black;
+  background: white;
+  transform: translate(-50%, -50%);
+  z-index: 100000;
+}
+
+.modalInsertString select, .modalInsertString input{
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 0 10px;
+}
+
+.Table td, .Table th{
+  border: 1px solid black;
+}
+
+.Table{
+  width: 100%;
+}
+
+.th_num>div{
+  width: 40px;
+}
+.th_comp_name>div{
+  width: 200px;
+}
+.th_comp_desc>div{
+  width: 450px;
+}
+td select{
+  width: 20px;
+}
+
+.th_comp_data>div{
+  width: 130px;
+}
+.th_comp_area>div{
+  width: 100px;
+}
+.th_comp_money>div{
+  width: 100px;
+}
+.th_obj_name>div{
+  width: 200px;
+}
+.th_obj_city>div{
+  width: 200px;
+}
+.th_obj_desc>div{
+  width: 400px;
+}
+
+.ListCompanies{
+  margin: 20px 20px;
+  text-align: start;
+}
+
+.companyFromList{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.companyFromList:hover{
+  background: #f8d7d8;
+}
+
+td>div{
+  outline: none;
+}
+
+.backImg{
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.backImg:hover{
+  background: #e3e2e2;
+  border-radius: 10px;
+}
+
+.form_desc{
+  margin-right: 10px;
+  background: #b3c9e8;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.form_input{
+  max-width: 200px;
+  display: inline-block;
+  min-width: 100px;
+  border-radius: 5px;
+  border: 1px dotted grey;
+  margin-right: 10px;
+  outline: none;
+  padding: 0 5px;
+}
+
+.wrap_company_form select{
+  width: 20px;
+}
+
+.wrap_company_form .valOfSelect{
+  max-width: 150px!important;
+  border: 1px dotted grey;
+  border-radius: 5px;
+  margin: 0!important;
+  margin-right: 10px!important;
+  padding-left: 5px!important;
+}
+
+.wrap_company_form .cellDiv{
+  justify-content: flex-start!important;
+}
+
+.firstLineCompanyForm div, .firstLineCompanyForm span, .firstLineCompanyForm input{
+  min-height: 25px!important;
+}
+
+.secondLineCompanyForm div, .secondLineCompanyForm span, .secondLineCompanyForm input{
+  min-height: 25px!important;
+  min-width: 100px;
+}
+
+.ListCompanies div{
+  outline: none;
+}
+
+.firstLineCompanyForm, .secondLineCompanyForm, .thirdLineCompanyForm{
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 5px dotted #b3c9e8;
+}
+
+.companyFormHeader{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.companyFormObjects{
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 5px dotted #a6daa7;
+}
+
+.companyFormObjects .form_desc{
+  background: #a6daa7;
+}
+
+.form_desc, .valOfSelect, .nameInForm{
+  margin-right: 10px;
+}
+
+.valOfSelect{
+  min-width: 100px;
+  max-width: 200px;
+}
+
+.companyFormContacts{
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 5px dotted #dad7a6;
+}
+
+.companyFormContacts .form_desc{
+  background: #dad7a6;
+}
+
+.companyFormYurs{
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 5px dotted #d77d98;
+}
+
+.companyFormYurs .form_desc{
+  background: #d77d98;
+}
+
+.objectForm .form_desc{
+  background: #a6daa7;
+}
+
+.objectForm{
+  border: 5px dotted #a6daa7;
+}
+
+.contactForm .form_desc{
+  background: #dad7a6;
+  margin-bottom: 5px;
+}
+
+.contactForm .cellDiv{
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.contactForm div{
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.contactForm{
+  border: 5px dotted #dad7a6;
+}
+
+.yurForm{
+  border: 5px dotted #d77d98;
+}
+
+.yurForm .form_desc{
+  background: #d77d98;
+  margin-bottom: 5px;
+}
+
+.contactForm .cellDiv div, .objectForm .cellDiv div, .yurForm .cellDiv div, .companyForm .cellDiv div{
+  height: fit-content!important;
+}
+
+.miniModal select{
+  width: fit-content;
 }
